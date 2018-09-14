@@ -23,6 +23,8 @@ require APP_ROOT.join('config', 'database')
 set :public_folder, File.join(APP_ROOT, "public")
 set :views, File.join(APP_ROOT, "views")
 set :erb, layout: :'application'
+set :session_secret, "my_password"
+enable :sessions
 
 # Load files
 Dir[APP_ROOT.join('controllers', '*.rb')].each { |file| require file }

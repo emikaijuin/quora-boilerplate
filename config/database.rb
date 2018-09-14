@@ -54,6 +54,9 @@ DB_NAME = db.path[1..-1]
 
 #   to :development
 
+# default: &default
+#   adapter: postgresql
+
 if Sinatra::Application.development?
 
  ActiveRecord::Base.establish_connection(
@@ -62,7 +65,9 @@ if Sinatra::Application.development?
 
    database: DB_NAME,
 
-   encoding: 'utf8'
+   encoding: 'utf8',
+   
+   host: 'localhost'
 
  )
 

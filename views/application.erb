@@ -9,6 +9,15 @@
     <link rel="stylesheet" type="text/css" href="css/application.css">
   </head>
   <body>
+    <h5>Welcome to Quora</h5>
+    
+    <% if current_user %>
+      <a href="/users/<%= current_user.id %>%">Your Profile</a>
+      <a href="/logout" >Logout </a>
+    <% else %>
+      <a href="/sign_up"> Sign Up </a>
+      <a href="/sign_in"> Sign In </a>
+    <% end %>
 
     <%= yield %>
 

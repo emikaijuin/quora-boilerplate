@@ -57,13 +57,13 @@ namespace :db do
   desc "Create the database at #{DB_NAME}"
   task :create do
     puts "Create database #{DB_NAME} if it doesn't exist..."
-    exec("createdb #{DB_NAME}")
+    exec("createdb #{DB_NAME} --host=localhost")
   end
 
   desc "Drop the database at #{DB_NAME}"
   task :drop do
     puts "Dropping database #{DB_NAME}..."
-    exec("dropdb #{DB_NAME}")
+    exec("dropdb #{DB_NAME} --host=localhost")
   end
   
  desc "Migrate the database (options: VERSION=x, VERBOSE=false, SCOPE=blog)."
